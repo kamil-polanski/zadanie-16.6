@@ -1,0 +1,23 @@
+body {
+    margin: 0 auto;
+    font-family: sans-serif;
+    background-color: #BF9004;
+    color: #fff;
+}
+
+.container {
+    width: 400px;
+    margin: 0 auto;
+    button {
+        height: 35px;
+        background-color: #A60321;
+        border: none;
+        border-radius: 8px;
+        margin: 0 15px;
+        color: #fff;
+        cursor: pointer;
+        &:hover {
+            background-color: #D9B504;
+        }
+    }
+}
