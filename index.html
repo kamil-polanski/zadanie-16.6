@@ -11,15 +11,47 @@
 
 <body>
     <div class="container">
-
         <h1>Country search engine</h1>
         <button id="search">Search a country</button>
         <input id="country-name" type="text" />
         <h2>List of countries</h2>
-        <ul id="countries">
-            <li>No data</li>
-        </ul>
+        <div id="results"></div>
+        <script id="template" type="x-tmpl-mustache">
+            <table id="template" class="table">
+                <thead>
+                    <tr>
+                        <th colspan="2">
+                            <h3>{{name}}</h3>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Capital</td>
+                        <td>{{capital}}</td>
+                    </tr>
+                    <tr>
+                        <td>Population</td>
+                        <td>{{population}}</td>
+                    </tr>
+                    <tr>
+                        <td>currencies</td>
+                        <td>{{currencies}}</td>
+                    </tr>
+                    <tr>
+                        <td>region</td>
+                        <td>{{region}}</td>
+                    </tr>
+                    <tr>
+                        <td>subregion</td>
+                        <td>{{subregion}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </script>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

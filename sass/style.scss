@@ -21,3 +21,26 @@ body {
         }
     }
 }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+}
+
+th {
+    border: 1px solid #000;
+    background: #A60321;
+}
+
+td {
+    padding: 3px;
+    text-align: left;
+    border: 1px solid #000;
+    width: 50%
+}
+
+tbody tr:nth-child(odd) {
+    background: #D9B504;
+}

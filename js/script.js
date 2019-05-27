@@ -15,11 +15,25 @@ function searchCountries() {
         .then(showCountriesList);
 }
 
+/*
 function showCountriesList(resp) {
     countriesList.innerText = ``;
+    console.log(resp);
     resp.forEach(function(item) {
         const liEl = document.createElement(`li`);
-        liEl.innerText = item.name;
+        liEl.innerText = item.capital;
         countriesList.appendChild(liEl);
     });
+}
+*/
+const template = document.querySelector(`#template`).innerHTML;
+Mustache.parse(template);
+
+function showCountriesList(resp) {
+    const results = document.querySelector(`#results`);
+    results.innerHTML = ``;
+    resp.forEach(function(ele) {
+        const render = Mustache.render(template, ele);
+        results.insertAdjacentHTML(`beforeend`, render);
+    })
 }
