@@ -5,14 +5,26 @@ const countriesList = document.querySelector(`#countries`);
 
 document.querySelector(`#search`).addEventListener(`click`, searchCountries);
 
+function handleErrors(resp) {
+    if (!resp.ok) {
+        throw Error(resp.statusText);
+    }
+    return resp;
+}
+
 function searchCountries() {
     const countryName = document.querySelector(`#country-name`).value;
     if (!countryName.length) countryName = `Poland`;
     fetch(url + countryName)
+        .then(handleErrors)
         .then(function(resp) {
             return resp.json();
+        }).then(function(resp) {
+            showCountriesList(resp);
         })
-        .then(showCountriesList);
+        .catch(function(error) {
+            console.log(error);
+        });
 }
 
 /*
